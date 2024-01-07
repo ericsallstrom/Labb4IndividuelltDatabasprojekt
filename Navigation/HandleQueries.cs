@@ -896,8 +896,7 @@ namespace Labb4IndividuelltDatabasprojekt.Navigation
 
             foreach (var result in teachersPerBranch)
             {
-                Console.WriteLine($"Total Number of Teachers in Branch {result.BranchName}: {result.TeacherCount}");
-                Console.WriteLine("---");
+                Console.WriteLine($"Total Number of Teachers in Branch {result.BranchName}: {result.TeacherCount}\n");
             }
 
             PressAnyKeyMessage();
