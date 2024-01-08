@@ -190,6 +190,7 @@ namespace Labb4IndividuelltDatabasprojekt.Navigation
                         {
                             Console.WriteLine($"Grade could not be assigned: {ex.Message}");
                             transaction.Rollback();
+                            break;
                         }
                     }
                 }
