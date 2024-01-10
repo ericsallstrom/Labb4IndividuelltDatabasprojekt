@@ -64,6 +64,10 @@ public partial class KrutångerHighSchoolDbContext : DbContext
         {
             try
             {
+                /* OBS! Jag ville testa att lagra anslutningssträngen i en appsettings.json-fil och hämta den
+                   med hjälp av ett konfigurations API. Jag har dock lagt till en hårdkodad anslutningssträng
+                   nedan (den är för tillfället ut-kommenterad) för att underlätta för den som rättar projektet. */
+
                 // Use the ConfigurationsBuilder to build a configuration from appsettings.json.
                 IConfiguration config = new ConfigurationBuilder()
                     .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
@@ -72,6 +76,9 @@ public partial class KrutångerHighSchoolDbContext : DbContext
 
                 // Get the connection string from appsettings.json.
                 string connectionString = config.GetConnectionString("KrutångerHighSchoolDbContext")!;
+                 
+                // Hårdkodad anslutningssträng, lägg till namnet på din egen databas-server.
+                //string connectionstring = "Data Source=YOURDATABASE;Initial Catalog=KrutångerHighSchoolDb;Integrated Security=True;Trust Server Certificate=True;";
 
                 // Configure DbContext to use SQL Server with the obtained connection string.
                 optionsBuilder.UseSqlServer(connectionString);
